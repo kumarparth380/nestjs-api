@@ -6,6 +6,12 @@ import { Product } from './product.model';
 export class ProductsService {
   private products: Product[] = [];
 
+  /**
+   *
+   * @param title product name
+   * @param desc description of the product
+   * @param price price of the product
+   */
   insertProduct(title: string, desc: string, price: number) {
     const prodId = Math.random().toString();
     const newProduct = new Product(prodId, title, desc, price);
@@ -17,11 +23,22 @@ export class ProductsService {
     return [...this.products];
   }
 
+  /**
+   *
+   * @param productId product unique identifier
+   */
   getSingleProduct(productId: string) {
     const product = this.findProduct(productId)[0];
     return { ...product };
   }
 
+  /**
+   *
+   * @param productId product unique identifier
+   * @param title product name
+   * @param desc description of the product
+   * @param price price of the product
+   */
   updateProduct(productId: string, title: string, desc: string, price: number) {
     const [product, index] = this.findProduct(productId);
     const updatedProduct = { ...product };
