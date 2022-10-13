@@ -7,7 +7,7 @@ export class ProductsService {
   private products: Product[] = [];
 
   /**
-   *
+   * Insert the product with title, description & price
    * @param title product name
    * @param desc description of the product
    * @param price price of the product
@@ -24,7 +24,7 @@ export class ProductsService {
   }
 
   /**
-   *
+   * Get single product
    * @param productId product unique identifier
    */
   getSingleProduct(productId: string) {
@@ -33,7 +33,7 @@ export class ProductsService {
   }
 
   /**
-   *
+   * Updates the product
    * @param productId product unique identifier
    * @param title product name
    * @param desc description of the product
